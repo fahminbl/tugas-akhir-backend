@@ -13,15 +13,6 @@ class Inventory {
     }
   }
 
-  // static async filterByQuery(query) {
-  //   try {
-  //     const sql = `select * from inventory where name = '${query.name}'`;
-  //     return dbPool.query(sql);
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // }
-
   static async getItem(id) {
     try {
       const sql = `select name, description, quantity, price from inventory where id = ${id}`;
