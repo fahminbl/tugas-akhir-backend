@@ -5,5 +5,5 @@ export const inventorySchema = Joi.object({
   name: Joi.string().required(),
   description: Joi.string(),
   quantity: Joi.number(),
-  price: Joi.number()
+  price: Joi.number(),
 });

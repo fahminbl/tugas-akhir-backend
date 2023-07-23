@@ -15,7 +15,7 @@ app.listen(port, host, () => {
 });
 
 app.use(express.json());
-app.use('/api/inventory', inventoryRouter);
+app.use('/api/v1/inventory', inventoryRouter);
 
 app.use((err, req, res, next) => {
   console.log(err.message);

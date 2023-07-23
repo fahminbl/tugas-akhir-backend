@@ -3,14 +3,24 @@
 import dbPool from '../utils/db.js';
 
 class Inventory {
-  static async getInventory() {
-    const sql = 'select * from inventory';
+  static async getInventory(query, params) {
+    const sql = query;
+    const value = params;
     try {
-      return dbPool.query(sql);
+      return dbPool.query(sql, value);
     } catch (error) {
       console.log(error);
     }
   }
+
+  // static async filterByQuery(query) {
+  //   try {
+  //     const sql = `select * from inventory where name = '${query.name}'`;
+  //     return dbPool.query(sql);
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // }
 
   static async getItem(id) {
     try {
