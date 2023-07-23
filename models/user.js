@@ -1,5 +1,5 @@
 /* eslint-disable consistent-return */
-import dbPool from '../utils/db';
+import dbPool from '../utils/db.js';
 
 class User {
   static async getUser() {
@@ -20,10 +20,21 @@ class User {
     }
   }
 
-  static async createUser({ username, email, password }) {
+  static async loginUser(query, data) {
     try {
-      const sql = `insert into users (username, email, password) values (${username}, ${email}, ${password})`;
-      return dbPool.query(sql);
+      const sql = query;
+      const value = data;
+      return dbPool.query(sql, value);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  static async createUser(query, data) {
+    try {
+      const sql = query;
+      const value = data;
+      return dbPool.query(sql, value);
     } catch (error) {
       console.log(error);
     }
