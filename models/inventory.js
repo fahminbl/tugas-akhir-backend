@@ -1,7 +1,7 @@
 /* eslint-disable import/extensions */
 /* eslint-disable consistent-return */
 import dbPool from '../utils/db.js';
-
+import { nanoid } from 'nanoid';
 class Inventory {
   static async getInventory(query, params) {
     const sql = query;
